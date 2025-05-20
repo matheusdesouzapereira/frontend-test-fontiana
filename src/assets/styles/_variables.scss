@@ -1,0 +1,28 @@
+// Colors
+@use 'sass:color';
+
+$primary-color: #f0b90b;
+$secondary-color: #1e2026;
+$background-color: #181a20;
+$text-color: #eaecef;
+$border-color: #2b3139;
+
+$text-light-10: color.adjust($text-color, $lightness: 10%);
+$text-light-20: color.adjust($text-color, $lightness: 20%);
+$text-light-30: color.adjust($text-color, $lightness: 30%);
+$primary-dark-10: color.adjust($primary-color, $lightness: -10%);
+$secondary-light-10: color.adjust($secondary-color, $lightness: 10%);
+$danger-dark-10: color.adjust(#f6465d, $lightness: -10%);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
