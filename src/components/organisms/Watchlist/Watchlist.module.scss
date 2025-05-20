@@ -1,0 +1,103 @@
+@use '../../../assets/styles/variables' as *;
+
+.watchlist {
+  background-color: $secondary-color;
+  border-radius: 8px;
+  padding: $spacing-md;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $spacing-sm;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  td {
+    color: $text-light-10;
+  }
+}
+
+.symbol {
+  display: flex;
+  flex-direction: column;
+  
+  .pair {
+    font-size: 0.75rem;
+    color: $text-light-20;
+  }
+}
+
+.change {
+  &.positive {
+    color: #0ecb81;
+  }
+
+  &.negative {
+    color: #f6465d;
+  }
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: $spacing-md;
+  color: $text-light-30;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #f6465d;
+  cursor: pointer;
+  font-size: 0.875rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .table {
+    display: block;
+    
+    thead {
+      display: none;
+    }
+    
+    tbody, tr, td {
+      display: block;
+      width: 100%;
+    }
+    
+    tr {
+      margin-bottom: $spacing-md;
+      border-bottom: 2px solid $border-color;
+    }
+    
+    td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+      
+      &::before {
+        content: attr(data-label);
+        position: absolute;
+        left: $spacing-sm;
+        width: calc(50% - #{$spacing-sm});
+        padding-right: $spacing-sm;
+        text-align: left;
+        font-weight: 600;
+        color: $text-color;
+      }
+    }
+  }
+}
