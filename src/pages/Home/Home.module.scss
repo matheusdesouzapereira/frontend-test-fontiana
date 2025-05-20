@@ -1,0 +1,56 @@
+@use '../../assets/styles' as *;
+
+$logo-width: 300px;
+
+.home {
+  padding: $spacing-md;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: $spacing-lg;
+
+  .logo {
+    width: $logo-width;
+    margin-top: $spacing-md;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: $spacing-md;
+  flex: 1;
+  min-height: 0;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  height: 100%;
+}
+
+@media (max-width: $breakpoint-md) {
+  .home {
+    height: auto;
+    min-height: 100vh;
+  }
+}

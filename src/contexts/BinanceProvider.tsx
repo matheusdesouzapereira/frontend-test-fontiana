@@ -9,7 +9,7 @@ export const BinanceProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [watchlists, setWatchlists] = useState<Record<string, WatchlistItem[]>>({
     'List 1': []
   });
-  const [activeWatchlist, setActiveWatchlist] = useState<string>('List A');
+  const [activeWatchlist, setActiveWatchlist] = useState<string>('List 1');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -63,8 +63,10 @@ export const BinanceProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const selectWatchlist = (listName: string) => {
     if (watchlists[listName]) {
-      setActiveWatchlist(listName);
-    }
+    setActiveWatchlist(listName);
+  } else {
+    console.warn(`Watchlist ${listName} does not exist`);
+  }
   };
 
   useEffect(() => {
